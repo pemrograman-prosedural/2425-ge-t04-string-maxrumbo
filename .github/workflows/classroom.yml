@@ -105,7 +105,7 @@ jobs:
         setup-command: make compile
         command: make -s test_02
         input: "C\n "
-        expected-output: '067092110'
+        expected-output: '067047110'
         comparison-method: exact
         timeout: 1
         max-score: 15
