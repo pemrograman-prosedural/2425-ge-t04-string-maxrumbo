@@ -4,22 +4,27 @@
 #include <stdio.h>
 #include <string.h>
 
+#define MAX_STRING_LENGTH 100
+
 typedef struct {
-    char str[21];
+    char str[MAX_STRING_LENGTH + 1]; 
 } Input;
 
 int main() {
     Input input;
-    int i, len;
+    int length;
 
-    fgets(input.str, sizeof(input.str), stdin);
+    if (fgets(input.str, sizeof(input.str), stdin) == NULL) {
+        fprintf(stderr, "Error reading input.\n");
+        return 1;
+    }
+
     input.str[strcspn(input.str, "\n")] = 0;
 
-    len = strlen(input.str);
+    length = strlen(input.str);
 
-    for (i = 0; i < len; i++) {
-        int ascii = (int)input.str[i];
-        printf("%03d", ascii);
+    for (int i = 0; i < length; i++) {
+        printf("%03d", (int)input.str[i]);
     }
 
     printf("\n");
