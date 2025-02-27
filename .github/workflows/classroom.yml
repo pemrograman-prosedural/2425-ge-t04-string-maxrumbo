@@ -69,7 +69,7 @@ jobs:
         setup-command: make compile
         command: make -s test_02
         input: 'Big O'
-        expected-output: '066105103032079'
+        expected-output: '066105103032079013'
         comparison-method: exact
         timeout: 1
         max-score: 15
@@ -81,7 +81,7 @@ jobs:
         setup-command: make compile
         command: make -s test_02
         input: 'Jaka Sembung'
-        expected-output: '074097107097032083101109098117110103'
+        expected-output: '074097107097032083101109098117110103013'
         comparison-method: exact
         timeout: 1
         max-score: 15
@@ -93,14 +93,22 @@ jobs:
         setup-command: make compile
         command: make -s test_02
         input: 'c_total=blackscreen'
-        expected-output: '099095116111116097108061098108097099107115099114101101110'
+        expected-output: '099095116111116097108061098108097099107115099114101101110013'
         comparison-method: exact
         timeout: 1
-        max-score: 30
+        max-score: 15
     - name: test_02-04
       id: test_02-04
       uses: classroom-resources/autograding-io-grader@v1
       with:
+        test-name: test_02-04
+        setup-command: make compile
+        command: make -s test_02
+        input: "C\n "
+        expected-output: '067013'
+        comparison-method: exact
+        timeout: 1
+        max-score: 15
     - name: Autograding Reporter
       uses: classroom-resources/autograding-grading-reporter@v1
       env:

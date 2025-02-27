@@ -27,7 +27,7 @@ int main() {
         printf("%03d", (int)input.str[i]);
     }
 
-    printf("\n");
+    printf("013\n");
 
     return 0;
 }
